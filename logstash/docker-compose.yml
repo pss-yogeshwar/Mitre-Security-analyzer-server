@@ -1,0 +1,22 @@
+services:
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.5.0
+
+    container_name: logstash
+
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+      - /home/omkar/services/MITRE/bhishigold/mitre-bhishi/logs:/logs
+
+    ports:
+      - "24228:24224"
+
+    networks:
+      - mitre-net
+
+    restart: always
+
+networks:
+  mitre-net:
+    external: true
