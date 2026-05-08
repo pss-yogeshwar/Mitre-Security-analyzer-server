@@ -1,0 +1,47 @@
+[
+  {
+    "rule_name": "Brute Force Login",
+    "event": "admin_login",
+    "status": "failed",
+    "threshold": 5,
+    "time_window_sec": 60,
+
+    "attack_type": "brute_force",
+
+    "mitre_tactic": "Credential Access",
+    "mitre_technique": "Brute Force",
+    "mitre_technique_id": "T1110",
+
+    "severity": "high",
+    "risk_score": 85
+  },
+
+  {
+    "rule_name": "Privilege Escalation",
+    "event": "role_updated",
+
+    "attack_type": "privilege_escalation",
+
+    "mitre_tactic": "Privilege Escalation",
+    "mitre_technique": "Valid Accounts",
+    "mitre_technique_id": "T1078",
+
+    "severity": "critical",
+    "risk_score": 95
+  },
+
+  {
+    "rule_name": "SQL Injection Attempt",
+    "event": "api_request",
+    "pattern": "or 1=1",
+
+    "attack_type": "sql_injection",
+
+    "mitre_tactic": "Initial Access",
+    "mitre_technique": "Exploit Public-Facing Application",
+    "mitre_technique_id": "T1190",
+
+    "severity": "critical",
+    "risk_score": 100
+  }
+]
